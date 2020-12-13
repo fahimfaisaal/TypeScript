@@ -1,0 +1,3 @@
+# Ignore Al node modules
+node_modules/
+.vscode/
