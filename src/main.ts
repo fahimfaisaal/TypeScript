@@ -65,3 +65,27 @@ const colorBlueCode: Colors = Colors.blue;
 for (let i in Colors) {
   //   console.log(Colors[i]);
 }
+
+//* unknown in typeScript
+const unknownString: unknown = "String";
+const unknownNumber: unknown = 1234;
+const unknownBoolean: unknown = false;
+
+//# It's could be any data type
+let notSure: unknown = 4;
+notSure = false;
+notSure = "string";
+notSure = 1234;
+
+//* any in typeScript
+let anyType: any = "String";
+let numberType: number = 1234;
+numberType = anyType; //* it's the main issue of any type
+// console.log(numberType);
+
+//* Void in typeScript
+function returnNothing(name: string): void {
+  console.log(`I am ${name}`);
+}
+
+// returnNothing("Fahim Faisal");
