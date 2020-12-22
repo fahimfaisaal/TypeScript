@@ -84,8 +84,10 @@ numberType = anyType; //* it's the main issue of any type
 // console.log(numberType);
 
 //* Void in typeScript
+let unusable: void = undefined;
+
 function returnNothing(name: string): void {
-  console.log(`I am ${name}`);
+  // console.log(`I am ${name}`);
 }
 
 // returnNothing("Fahim Faisal");
