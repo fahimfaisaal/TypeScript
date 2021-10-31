@@ -1,4 +1,5 @@
 console.clear();
+import Profile from "./classes/Profile";
 import "./practice";
 
 /**
@@ -60,7 +61,7 @@ const colorRedCode: Colors = Colors.red;
 const colorGreenCode: Colors = Colors.green;
 const colorBlueCode: Colors = Colors.blue;
 
-// console.log(colorRedCode, colorGreenCode, colorBlueCode);
+console.log(colorRedCode, colorGreenCode, colorBlueCode);
 
 for (let i in Colors) {
   //   console.log(Colors[i]);
@@ -91,3 +92,51 @@ function returnNothing(name: string): void {
 }
 
 // returnNothing("Fahim Faisal");
+
+//* Alias type
+type resultCal = {
+  add: number;
+  sub: number;
+  mul: number;
+  div: number;
+};
+
+function calcOfTwo(x: number, y: number, action: unknown): number | string {
+  const result: resultCal = {
+    add: x + y,
+    sub: x - y,
+    mul: x * y,
+    div: x / y,
+  };
+
+  const getResult: number | undefined = result[action as keyof resultCal];
+
+  return getResult ? getResult : "Invalid operation";
+}
+
+console.log(calcOfTwo(1, 2, "sjdhf"));
+
+//  function Signature
+let profile: (name: string, age: number) => string;
+let greet: (name: string, greet: string) => string;
+
+profile = (name: string, age: number): string => {
+  const profileString = `name = ${name} age = ${age}`;
+
+  return profileString;
+};
+
+greet = (name: string, greet: string): string => {
+  return `${greet}, ${name}`;
+};
+
+console.log(profile("fahim faisal", 23));
+console.log(greet("fahim faisal", "Assalamu alaikum"));
+
+// let div: HTMLDivElement[];
+
+// class
+
+const user: Profile = new Profile("fahim", 23, "fahim@gmail.com");
+
+console.log(user.getGmail);
