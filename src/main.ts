@@ -140,3 +140,31 @@ console.log(greet("fahim faisal", "Assalamu alaikum"));
 const user: Profile = new Profile("fahim", 23, "fahim@gmail.com");
 
 console.log(user.getGmail);
+
+const formValues: { [field: string]: unknown } = {
+  firstName: "Bob",
+  surname: "Smith",
+  age: 30,
+};
+
+formValues.location = "Bangladesh";
+
+enum Level {
+  Heigh = "H",
+  Medium = "M",
+  Low = "L",
+}
+
+let level: Level = Level.Low;
+
+let value: string = Level.Heigh;
+
+if (value === Level.Heigh) {
+  console.log("My height is 5 feet 7 inch");
+}
+
+console.log(level);
+
+const a: HTMLAnchorElement = document.querySelector(".link")!;
+
+console.log(a);

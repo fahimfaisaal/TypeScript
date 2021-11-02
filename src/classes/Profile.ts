@@ -25,11 +25,11 @@ class Profile {
     this.age = age;
   }
 
-  public get getGmail(): string {
+  get getGmail(): string {
     return this.gmail;
   }
 
-  public set setGmail(gmail: string) {
+  set setGmail(gmail: string) {
     this.gmail = gmail;
   }
 }
