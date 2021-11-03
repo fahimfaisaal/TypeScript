@@ -165,6 +165,13 @@ if (value === Level.Heigh) {
 
 console.log(level);
 
-const a: HTMLAnchorElement = document.querySelector(".link")!;
+interface Names {
+  [key: number]: string;
+}
 
-console.log(a);
+const obj: Names = {
+  23: "stirng can accept",
+  76: "string not acces",
+};
+
+const numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
