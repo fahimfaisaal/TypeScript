@@ -1,6 +1,6 @@
 class Profile {
-  private name: string;
-  private age: number;
+  public name: string;
+  protected age: number;
   private gmail: string;
 
   constructor(name: string, age: number, gmail: string) {

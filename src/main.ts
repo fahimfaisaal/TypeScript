@@ -1,5 +1,7 @@
 console.clear();
+import Human from "./classes/Human";
 import Profile from "./classes/Profile";
+import Location from "./Interface/Location";
 import "./practice";
 
 /**
@@ -56,15 +58,14 @@ const colorGreen: string = Colors[5];
 const colorBlue: string = Colors[9];
 
 // console.log(colorRed, colorGreen, colorBlue);
-
 const colorRedCode: Colors = Colors.red;
 const colorGreenCode: Colors = Colors.green;
 const colorBlueCode: Colors = Colors.blue;
 
-console.log(colorRedCode, colorGreenCode, colorBlueCode);
+// console.log(colorRedCode, colorGreenCode, colorBlueCode);
 
 for (let i in Colors) {
-  //   console.log(Colors[i]);
+  //   // console.log(Colors[i]);
 }
 
 //* unknown in typeScript
@@ -114,7 +115,7 @@ function calcOfTwo(x: number, y: number, action: unknown): number | string {
   return getResult ? getResult : "Invalid operation";
 }
 
-console.log(calcOfTwo(1, 2, "sjdhf"));
+// console.log(calcOfTwo(1, 2, "sjdhf"));
 
 //  function Signature
 let profile: (name: string, age: number) => string;
@@ -130,8 +131,8 @@ greet = (name: string, greet: string): string => {
   return `${greet}, ${name}`;
 };
 
-console.log(profile("fahim faisal", 23));
-console.log(greet("fahim faisal", "Assalamu alaikum"));
+// console.log(profile("fahim faisal", 23));
+// console.log(greet("fahim faisal", "Assalamu alaikum"));
 
 // let div: HTMLDivElement[];
 
@@ -139,7 +140,7 @@ console.log(greet("fahim faisal", "Assalamu alaikum"));
 
 const user: Profile = new Profile("fahim", 23, "fahim@gmail.com");
 
-console.log(user.getGmail);
+// console.log(user.getGmail);
 
 const formValues: { [field: string]: unknown } = {
   firstName: "Bob",
@@ -160,10 +161,10 @@ let level: Level = Level.Low;
 let value: string = Level.Heigh;
 
 if (value === Level.Heigh) {
-  console.log("My height is 5 feet 7 inch");
+  // console.log("My height is 5 feet 7 inch");
 }
 
-console.log(level);
+// console.log(level);
 
 interface Names {
   [key: number]: string;
@@ -175,3 +176,15 @@ const obj: Names = {
 };
 
 const numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const address: Location = {
+  region: "Asia pacific",
+  state: "Bangladesh",
+  city: "Rajshahi",
+  town: "Naogaon",
+  village: "Par-Naogaon",
+};
+
+const man: Human = new Human("Fahim Faisal", 23, 5.7, 56, address);
+man.setPhone = "+8801721494068";
+console.log(man.toString());
