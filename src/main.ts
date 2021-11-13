@@ -187,4 +187,32 @@ const address: Location = {
 
 const man: Human = new Human("Fahim Faisal", 23, 5.7, 56, address);
 man.setPhone = "+8801721494068";
-console.log(man.toString());
+// console.log(man.toString());
+
+// Generics
+/**
+ * T for type
+ * S for sate
+ * E for element
+ * K for key
+ * V for value
+ */
+//! Generics with interfaces
+
+interface person<T> {
+  name: string;
+  age: T;
+  id: string;
+}
+
+const p1: person<string> = {
+  name: "Fahim Faisal",
+  age: "23",
+  id: "348349583458",
+}
+
+const p2: person<number> = {
+  name: "Soikot",
+  age: 23,
+  id: "348349583458435",
+}
