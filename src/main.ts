@@ -189,7 +189,7 @@ const man: Human = new Human("Fahim Faisal", 23, 5.7, 56, address);
 man.setPhone = "+8801721494068";
 // console.log(man.toString());
 
-// Generics
+// Generics conventions
 /**
  * T for type
  * S for sate
@@ -216,3 +216,21 @@ const p2: person<number> = {
   age: 23,
   id: "348349583458435",
 }
+
+
+// Generics with functions
+function checkType<T>(any: T): string {
+  return typeof any;
+}
+
+console.log(checkType<string>("I am string"));
+console.log(checkType<number>(23));
+console.log(checkType<boolean>(true));
+console.log(checkType<object>({}));
+
+
+function passWhatYouWant<T, S>(any: T, any2: S): [T, S] {
+  return [any, any2];
+}
+
+console.log(passWhatYouWant<string, number>("I am string", 23));
