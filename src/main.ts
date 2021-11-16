@@ -217,20 +217,54 @@ const p2: person<number> = {
   id: "348349583458435",
 }
 
+interface Form<T> {
+  errors: {
+    [K in keyof T]?: string;
+  };
+  values: T;
+}
+
+interface Contact {
+  name: string;
+  email: string;
+  location: string;
+}
+
+const contactForm: Form<Contact> = {
+  errors: {
+    name: "Name is Required",
+    email: "Email Must be valid"
+  },
+  values: {
+      name: "Bob",
+      email: "bob@someemail.com",
+      location: "Bangladesh"
+  }
+}
+
 
 // Generics with functions
 function checkType<T>(any: T): string {
   return typeof any;
 }
 
-console.log(checkType<string>("I am string"));
-console.log(checkType<number>(23));
-console.log(checkType<boolean>(true));
-console.log(checkType<object>({}));
+// console.log(checkType<string>("I am string"));
+// console.log(checkType<number>(23));
+// console.log(checkType<boolean>(true));
+// console.log(checkType<object>({}));
 
 
 function passWhatYouWant<T, S>(any: T, any2: S): [T, S] {
   return [any, any2];
 }
 
-console.log(passWhatYouWant<string, number>("I am string", 23));
+// console.log(passWhatYouWant<string, number>("I am string", 23));
+
+function firstOrNull<T>(array: T[]): T | null {
+  return array[0] || null;
+}
+
+console.log(firstOrNull<string>(['fahim', 'faisal']));
+console.log(firstOrNull<number>([1, 3]));
+
+
