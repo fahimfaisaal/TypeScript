@@ -264,7 +264,5 @@ function firstOrNull<T>(array: T[]): T | null {
   return array[0] || null;
 }
 
-console.log(firstOrNull<string>(['fahim', 'faisal']));
+console.log(firstOrNull<string>(['soikot', 'atiya', 'fahim']));
 console.log(firstOrNull<number>([1, 3]));
-
-
