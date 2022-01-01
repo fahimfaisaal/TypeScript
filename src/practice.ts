@@ -1,3 +1,4 @@
+
 //! Object boilerplate by using interface
 interface User {
   name: string;
@@ -50,3 +51,127 @@ for (let i: number = 0; i < arr.length; i++) {
 let tuple: [number, string] = [22, "soikot"];
 
 tuple[1];
+
+interface NameViaLink {
+  name: string;
+  link: string;
+}
+
+interface Price {
+  regular: number;
+  sale: number;
+  currency?: string;
+}
+
+interface Social extends NameViaLink {
+  color: string;
+  tooltip: string;
+}
+
+interface Image {
+  altText: string;
+  thumbnail: string;
+  original: string;
+  featured: boolean;
+}
+
+interface Customer {
+  name: string;
+  mail: string;
+  rating: string;
+  review: string;
+  saveUserInformation: boolean;
+}
+
+interface Product {
+  id: string;
+  breadcrumbs: NameViaLink[];
+  title: string;
+  price: Price;
+  summary: string;
+  description: string;
+  categories: NameViaLink[];
+  wishList: boolean;
+  share: Social[]
+  images: Image[]
+  reviews?: Customer[]
+}
+
+const products: Product[] = [
+  {
+    id: '1',
+    breadcrumbs: [
+      {
+        name: 'Home',
+        link: 'home-link'
+      },
+      {
+        name: 'Shop',
+        link: 'shop-link'
+      },
+      {
+        name: 'Men',
+        link: 'men-link'
+      },
+    ],
+    title: 'this is title 1',
+    price: {
+      regular: 334,
+      sale: 230,
+      currency: '$'
+    },
+    summary: 'this is a demo summary',
+    description: 'this is the demo description',
+    categories: [
+      {
+        name: 'Men',
+        link: 'men-link'
+      },
+      {
+        name: 'T-shirt',
+        link: 't-shirt-link'
+      }
+    ],
+    wishList: false,
+    share: [
+      {
+        color: 'blue',
+        name: 'facebook',
+        link: 'https://www.facebook.com',
+        tooltip: 'share on facebook'
+      },
+      {
+        color: 'sky-blue',
+        name: 'google',
+        link: 'https://www.google.com',
+        tooltip: 'share on google'
+      },
+      {
+        color: 'blue',
+        name: 'linkedin',
+        link: 'https://www.linkedin.com',
+        tooltip: 'share on linkedin'
+      },
+    ],
+    images: [
+      {
+        altText: 'sample alt',
+        thumbnail: 'thumb.png',
+        original: 'original.png',
+        featured: true,
+      },
+      {
+        altText: 'sample alt',
+        thumbnail: 'thumb.png',
+        original: 'original.png',
+        featured: false,
+      },
+      {
+        altText: 'sample alt',
+        thumbnail: 'thumb.png',
+        original: 'original.png',
+        featured: false,
+      },
+    ]
+  }
+]

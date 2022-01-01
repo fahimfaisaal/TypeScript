@@ -14,5 +14,9 @@
     "nodemon": "^2.0.6",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "@types/shortid": "^0.0.29",
+    "shortid": "^2.2.16"
   }
 }
