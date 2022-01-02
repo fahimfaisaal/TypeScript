@@ -175,3 +175,22 @@ const products: Product[] = [
     ]
   }
 ]
+
+
+type Name = {
+  firstName: string;
+  lastName: string;
+};
+
+interface PhoneNumber {
+  landline: string;
+  mobile: string;
+}
+
+// type intersection
+const from: Name & PhoneNumber = {
+  firstName: 'fahim',
+  lastName: 'faisal',
+  landline: "345345634",
+  mobile: "01721453534"
+}
